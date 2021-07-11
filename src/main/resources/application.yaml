@@ -1,0 +1,13 @@
+# Tomcat启动端口
+server:
+  port: 8080
+# DataSource数据源
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/mall
+    username: root
+    password: root
+mybatis:
+  mapper-locations: classpath:com.star.mall.mapper/*Mapper.xml
+  type-aliases-package: com.star.mall.mapper
