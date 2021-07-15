@@ -9,6 +9,7 @@ package com.star.mall.controller;
 import com.star.mall.pojo.Category;
 import com.star.mall.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -30,7 +31,7 @@ public class CategoryController {
      *
      * @param category 商品
      */
-    @RequestMapping("/Added")
+    @RequestMapping("/add")
     public void categoryAdded(@RequestBody Category category) {
         categoryService.categoryAdded(category);
     }
@@ -40,9 +41,25 @@ public class CategoryController {
      *
      * @return categoryList商品集合
      */
-    @RequestMapping("/QueryList")
+    @RequestMapping("/list")
     public List<Category> categoryQueryList() {
         List<Category> categoryList = categoryService.categoryQueryList();
         return categoryList;
+    }
+
+    /**
+     * 删除商品类别
+     */
+    @RequestMapping("/delete")
+    public void categoryDelete(@RequestBody Category category) {
+        categoryService.categoryDelete(category);
+    }
+
+    /**
+     * 修改商品类别
+     */
+    @RequestMapping("/update")
+    public void categoryUpdate(@RequestBody Category category) {
+        categoryService.categoryUpdate(category);
     }
 }
