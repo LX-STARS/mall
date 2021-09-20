@@ -2,11 +2,24 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.star.mall.mapper.CategoryMapper">
     <insert id="categoryAdded" parameterType="com.star.mall.pojo.Category">
-        insert into category
-        values (cateId, name, descn)
+        insert into category (name, descn)
+        values (#{name}, #{descn})
     </insert>
     <select id="categoryQueryList" resultType="com.star.mall.pojo.Category">
         select *
         from category
     </select>
+    <delete id="categoryDelete">
+        delete from category
+        <where>
+            cartId=#{id}
+        </where>
+    </delete>
+
+    <update id="categoryUpdate" parameterType="com.star.mall.pojo.Category">
+        UPDATE category
+        SET name=#{name},
+            descn=#{descn}
+        WHERE cartId = #{cartId}
+    </update>
 </mapper>

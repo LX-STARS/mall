@@ -1,6 +1,8 @@
 package com.star.mall.pojo;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * @author: star
@@ -16,7 +18,7 @@ public class Category {
     /**
      * 商品类别 ID
      */
-    private int cateId;
+    private int cartId;
     /**
      * 商品类别名称
      */
@@ -25,4 +27,5 @@ public class Category {
      * 描述
      */
     private String descn;
+
 }

@@ -18,7 +18,7 @@ import java.util.List;
  * 商品类别类
  */
 @Service
-public class CategoryServiceImpl implements CategoryService {
+public class CategoryServiceimpl implements CategoryService {
     /**
      * 添加商品类别
      *
@@ -40,5 +40,22 @@ public class CategoryServiceImpl implements CategoryService {
     @Override
     public List<Category> categoryQueryList() {
         return categoryMapper.categoryQueryList();
+    }
+
+    /**
+     * 删除商品类别
+     */
+    @Override
+    public void categoryDelete(Category category) {
+        int cateId = category.getCartId();
+        categoryMapper.categoryDelete(cateId);
+    }
+
+    /**
+     * 修改商品类别
+     */
+    @Override
+    public void categoryUpdate(Category category) {
+        categoryMapper.categoryUpdate(category);
     }
 }

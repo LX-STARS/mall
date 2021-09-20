@@ -12,6 +12,7 @@ import java.util.List;
 public interface CategoryService {
     /**
      * 添加商品类别
+     *
      * @param category 商品
      */
     void categoryAdded(Category category);
@@ -22,5 +23,16 @@ public interface CategoryService {
      * @return categoryList商品集合
      */
     List<Category> categoryQueryList();
+
+    /**
+     * 删除商品类别
+     */
+    void categoryDelete(Category category);
+
+    /**
+     * 修改商品类别
+     */
+    void categoryUpdate(Category category);
+
 
 }
